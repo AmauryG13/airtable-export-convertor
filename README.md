@@ -46,9 +46,9 @@ Les 4 arguments utilisables, dans la version actuelle, sont :
 
 * `[-o / -output] filename.csv` : nom du fichier de sortie
 
-* `[--delimiter ] ` : caractère délimiteur du CSV
+* `[--delimiter ]` : caractère délimiteur du CSV
 
-* `[--linebreak ] ` : caractère de saut de ligne du CSV
+* `[--linebreak ]` : caractère de saut de ligne du CSV
 
 Par exemple :
 ```
