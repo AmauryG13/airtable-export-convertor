@@ -5,7 +5,7 @@ with open('README.md', mode='r') as f:
 
 setuptools.setup(
     name='Airtable-Export-Convertor',
-    version='0.9.0',
+    version='1.0.0',
     url='https://github.com/amauryg13/airtable-lb-remover.git',
     author='Amaury Guillermin',
     author_email='amauryguillermin@gmail.com',
