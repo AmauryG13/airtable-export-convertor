@@ -1,6 +1,6 @@
 import argparse
 
-from airtor.__main__ import __shortname__, __author__
+from airtor.__meta__ import __shortname__, __author__
 from airtor import Convertor
 
 class Cli(object):
