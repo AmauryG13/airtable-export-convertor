@@ -1,0 +1,59 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python package building
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    strategy:
+      matrix:
+        python-version: [3.5, 3.6, 3.7, 3.8]
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+        include:
+          - platform: ubuntu-latest
+            script: install_Linux
+            ext: .sh
+          - platform: macos-latest
+            script: install_macOS
+            ext: .command
+          - platform: windows-latest
+            script: install_Windows
+            ext: .bat
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies for Linux
+      run: |
+        sudo apt-get install python3-setuptools
+      if: matrix.platform == 'ubuntu-latest'
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip3 install -r requirements.txt
+      if: matrix.platform != 'windows-latest'
+
+    - name: Run installation scripts
+      run: |
+        ./${{ matrix.script }}${{ matrix.ext }}
+      working-directory: ./installer
+
+    - name: Run program through the launcher
+      run: |
+        ./airtable-convertor${{ matrix.ext }} -h
+      working-directory: ./launcher
