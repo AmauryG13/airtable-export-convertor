@@ -3,7 +3,7 @@ import csv
 from airtor.utils.file2stream import file2stream
 
 class CSVAdapter(object):
-    _separator = ','
+    _separator = ';'
 
     def __init__(self, delimiter):
         self.separator = delimiter

@@ -51,7 +51,7 @@ class Cli(object):
             self.args.data = data
 
     def run(self):
-        convertor = Convertor(separator=',',
+        convertor = Convertor(separator=';',
             delimiter=self.args.delimiter,
             linebreak=self.args.linebreak,
             strings=[';', '\n']
