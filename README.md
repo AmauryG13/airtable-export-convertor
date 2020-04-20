@@ -16,6 +16,15 @@ ou en tant que super - utilisateur (uniquement pour les machines __unix__):
 > sudo python setup.py install
 ```
 
+Pour toutes les systèmes d'exploitation, il existe un installeur qui permet l'installation rapide du package (dans le dossier ``` installer ```).
+
+Le package est, par défaut, installé en tant qu'__utilisateur lambda__ (pas en _super utilisation_ ou _administrateur_). Il sera donc nécessaire pour la suite d'utiliser la ligne de commande adéquat.
+
+Pour les systèmes __windows__, l'installer est le fichier se terminant par ``` *.bat ```
+Pour les systèmes __linux__, l'installer est le fichier se terminant par ``` *.sh ```
+Pour les systèmes __macOS__, l'installer est le fichier se terminant par ``` *.command ```
+
+
 ### Ligne de commande
 
 Le script analyse les arguments en entrée. Pour l'exécution, la commande a utilisé est :
@@ -39,6 +48,12 @@ $ python -m airtor.cli -d data.csv -o output.csv
 
 $ airtable-convertor -d data.csv
 ```
+
+Pour tous les systèmes d'exploitation, il existe un script de lancement (dans le dossier ``` launcher ```). Ce launcher peut etre utilisé n'importe où dans l'OS.
+
+Pour les systèmes __windows__, le launcher est le fichier se terminant par ``` *.bat ```
+Pour les systèmes __linux__, le launcher est le fichier se terminant par ``` *.sh ```
+Pour les systèmes __macOS__, le launcher est le fichier se terminant par ``` *.command ```
 
 #### Cheers
 Coded with :heartpulse:
