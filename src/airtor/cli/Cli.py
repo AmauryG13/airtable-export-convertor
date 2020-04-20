@@ -1,6 +1,7 @@
 import argparse
 
-from airtor import __shortname__, __author__, Convertor
+from airtor.__main__ import __shortname__, __author__
+from airtor import Convertor
 
 class Cli(object):
     _usage = "{Prog} [-h] [-d filename.csv] [-o output.csv] [-v]"
